@@ -4,8 +4,8 @@ import { Star as StarIcon, StarOutline as StarOutlineIcon } from '@material-ui/i
 import { useStyles } from './ScoreStar.style'
 
 const ScoreStar = ({ score }) => {
-  const starList = [false, false, false, false].map((_, index) => index + 1 <= score)
   const classes = useStyles()
+  const starList = [false, false, false, false].map((_, index) => index + 1 <= score)
 
   return (
     <>

@@ -1,60 +1,12 @@
-import React from 'react'
-import { makeStyles, Switch, withStyles } from '@material-ui/core'
+import { makeStyles } from '@material-ui/core'
 
-export const StyledSwitch = withStyles((theme) => ({
-  root: {
-    width: 48,
-    height: 24,
-    padding: 0,
-    margin: theme.spacing(1)
-  },
-  switchBase: {
-    padding: 3,
-    '&$checked': {
-      transform: 'translateX(24px)',
-      color: theme.palette.primary.main,
-      '& + $track': {
-        backgroundColor: theme.palette.primary.main,
-        opacity: 1,
-        border: 'none'
-      }
-    },
-    '&$focusVisible $thumb': {
-      color: '#52d869',
-      border: '6px solid #fff'
-    }
-  },
-  thumb: {
-    width: 18,
-    height: 18,
-    color: theme.palette.primary.contrastText,
-    borderRadius: 11
-  },
-  track: {
-    borderRadius: 18,
-    backgroundColor: '#79797A',
-    opacity: 1
-  },
-  checked: {},
-  focusVisible: {}
-}))(({ classes, ...props }) => (
-  <Switch
-    focusVisibleClassName={classes.focusVisible}
-    disableRipple
-    classes={{
-      root: classes.root,
-      switchBase: classes.switchBase,
-      thumb: classes.thumb,
-      track: classes.track,
-      checked: classes.checked
-    }}
-    {...props}
-  />
-))
 const useStyles = makeStyles((theme) => ({
   recipeContainer: {
-    padding: theme.spacing(4),
-    width: '100%'
+    padding: theme.spacing(2),
+    [theme.breakpoints.up('lg')]: {
+      padding: theme.spacing(4),
+      width: '100%'
+    }
   },
   recipeTitle: {
     fontWeight: 600
@@ -80,9 +32,6 @@ const useStyles = makeStyles((theme) => ({
       padding: theme.spacing(),
       borderBottom: '1px solid #EBF0F3'
     }
-  },
-  recipeName: {
-    fontSize: '.875rem'
   }
 }))
 

@@ -10,5 +10,6 @@ const configApp = (
     <App />
   </MuiThemeProvider>
 )
+
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(configApp)

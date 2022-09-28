@@ -15,10 +15,10 @@ export const theme = createMuiTheme({
       fontSize: '2rem'
     },
     h3: {
-      fontSize: '1.75rem'
+      fontSize: '1.5rem'
     },
     h4: {
-      fontSize: '1.5rem'
+      fontSize: '1.3rem'
     },
     h5: {
       fontSize: '1.25rem'
@@ -32,19 +32,19 @@ export const theme = createMuiTheme({
       default: '#f0f0f0'
     },
     primary: {
-      light: fade('#8DC63F', 0.7),
-      main: '#8DC63F',
-      contrastText: '#fff'
+      light: fade('#0C969D', 0.7),
+      main: '#0C969D',
+      contrastText: '#ffffff'
     },
     secondary: {
       light: fade('#F7941D', 0.7),
       main: '#F7941D',
       contrastText: '#000'
     },
-    info: {
-      light: fade('#0C969D', 0.7),
-      main: '#0C969D',
-      contrastText: '#ffffff'
+    success: {
+      light: fade('#8DC63F', 0.7),
+      main: '#8DC63F',
+      contrastText: '#fff'
     }
   },
   overrides: {
@@ -58,6 +58,7 @@ export const theme = createMuiTheme({
         borderRadius: 0,
         textTransform: 'none'
       },
+
       label: {
         fontWeight: 400
       }
@@ -65,7 +66,7 @@ export const theme = createMuiTheme({
     MuiInputBase: {
       root: {
         '& fieldset': {
-          borderRadius: 0
+          borderRadius: 4
         }
       }
     },

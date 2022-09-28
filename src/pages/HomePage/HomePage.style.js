@@ -2,9 +2,15 @@ import { makeStyles } from '@material-ui/core'
 
 export const useStyles = makeStyles((theme) => ({
   bodyContainer: {
-    display: 'flex'
+    [theme.breakpoints.up('lg')]: {
+      display: 'flex'
+    }
   },
-  aside: {},
+  aside: {
+    [theme.breakpoints.down('lg')]: {
+      display: 'none'
+    }
+  },
   asideImg: {
     width: 342,
     height: 944,

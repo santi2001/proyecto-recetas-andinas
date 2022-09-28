@@ -1,11 +1,10 @@
 import React from 'react'
 import { Typography } from '@material-ui/core'
-import { recipents } from 'utils/data/recipents'
 
-import { ScoreStar } from '../ScoreStar'
+import { RecipentList } from '../RecipeList'
 import { SearchWidget } from '../SearchWidget'
 
-import useStyles, { StyledSwitch } from './RecipeBoard.style'
+import useStyles from './RecipeBoard.style'
 
 const RecipeBoard = () => {
   const classes = useStyles()
@@ -31,24 +30,7 @@ const RecipeBoard = () => {
           </tr>
         </thead>
         <tbody>
-          {recipents.map((el, index) => (
-            <tr key={index}>
-              <td>
-                <Typography className={classes.recipeName}>{el.name}</Typography>
-              </td>
-              <td>
-                <ScoreStar score={el.score} />
-              </td>
-              <td>
-                <StyledSwitch
-                  checked={el.beforeCock}
-                  className={classes.switch}
-                  // onChange={handleChange}
-                  name='beforeCock'
-                />
-              </td>
-            </tr>
-          ))}
+          <RecipentList />
         </tbody>
       </table>
     </div>
