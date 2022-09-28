@@ -48,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
     '& fieldset': {
       border: 'none'
     },
-    [theme.breakpoints.down('lg')]: {
+    [theme.breakpoints.down('md')]: {
       marginTop: theme.spacing(3)
     }
   },
