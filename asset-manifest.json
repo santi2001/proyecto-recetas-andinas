@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.js": "/proyecto-recetas-andinas/static/js/main.88ddddc8.js",
+    "main.js": "/proyecto-recetas-andinas/static/js/main.62af5567.js",
     "static/media/aside-food.jpg": "/proyecto-recetas-andinas/static/media/aside-food.057f0f2a55eda628dacb.jpg",
     "index.html": "/proyecto-recetas-andinas/index.html",
-    "main.88ddddc8.js.map": "/proyecto-recetas-andinas/static/js/main.88ddddc8.js.map"
+    "main.62af5567.js.map": "/proyecto-recetas-andinas/static/js/main.62af5567.js.map"
   },
   "entrypoints": [
-    "static/js/main.88ddddc8.js"
+    "static/js/main.62af5567.js"
   ]
 }
