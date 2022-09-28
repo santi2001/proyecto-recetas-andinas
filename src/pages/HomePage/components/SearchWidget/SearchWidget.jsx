@@ -4,13 +4,13 @@ import {
   KeyboardArrowDown as KeyboardArrowDownIcon,
   Search as SearchIcon
 } from '@material-ui/icons'
-import { RecipentsContext } from 'context'
+import { RecipesContext } from 'context'
 
 import useStyles from './SearchWidget.style'
 
 const SearchWidget = () => {
   const classes = useStyles()
-  const { searchParams, setSearchParams } = useContext(RecipentsContext)
+  const { searchParams, setSearchParams } = useContext(RecipesContext)
 
   const showValue = (value) => {
     if (value === true) return 'Activos'

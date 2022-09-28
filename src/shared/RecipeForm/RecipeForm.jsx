@@ -7,6 +7,7 @@ import {
   TextField,
   Typography
 } from '@material-ui/core'
+import { MultiField } from 'pages/HomePage/components/MultiField'
 
 import { StyledSwitch } from '../StyledSwitch'
 
@@ -36,6 +37,7 @@ const RecipeForm = ({ buttonClose: ButtonClose }) => {
         </div>
         <div className={classes.formGroup}>
           <Typography>Ingredientes</Typography>
+          <MultiField />
         </div>
         <div className={classes.formGroup}>
           <Typography>Preparación</Typography>

@@ -7,7 +7,7 @@ export const useStyles = makeStyles((theme) => ({
     }
   },
   aside: {
-    [theme.breakpoints.down('lg')]: {
+    [theme.breakpoints.down('md')]: {
       display: 'none'
     }
   },
@@ -16,7 +16,6 @@ export const useStyles = makeStyles((theme) => ({
     height: 944,
     borderRadius: '0px 0px 100px 0px'
   }
-  // menu
 }))
 
 export default useStyles

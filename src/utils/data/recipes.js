@@ -1,4 +1,4 @@
-export const recipents = [
+export const recipes = [
   { id: '1', name: 'Melodía de bayas mixtas', score: 3, beforeCook: true },
   { id: '2', name: 'Sopa tailandesa de coliflor al curry rojo', score: 2, beforeCook: true },
   { id: '3', name: 'Berenjena especiada crujiente', score: 3, beforeCook: true },
@@ -17,4 +17,4 @@ export const recipents = [
   { id: '16', name: 'Ragú de pierna de cordero con pappardelle', score: 2, beforeCook: true }
 ]
 
-export default recipents
+export default recipes

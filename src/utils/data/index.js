@@ -1,1 +1,1 @@
-export * from './recipents'
+export * from './recipes'

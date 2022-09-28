@@ -1,44 +1,44 @@
 import React, { useState } from 'react'
-import { RecipentsContext } from 'context'
+import { RecipesContext } from 'context'
 import { HomePage } from 'pages/HomePage'
-import { recipents as recipentList } from 'utils'
+import { recipes as recipeList } from 'utils'
 
 export const App = () => {
-  const [recipents, setRecipents] = useState(recipentList)
+  const [recipes, setRecipes] = useState(recipeList)
+  const [viewRecipes, setViewRecipes] = useState([])
   const [searchParams, setSearchParams] = useState({ searchText: '', beforeCook: 'All' })
-  const [viewRecipents, setViewRecipents] = useState([])
 
-  const updateRecipent = (recipent) => {
-    const index = recipents.findIndex((x) => x.id === recipent.id)
-    recipents[index] = { ...recipent }
-    setRecipents([...recipents])
+  const updateRecipe = (recipent) => {
+    const index = recipes.findIndex((x) => x.id === recipent.id)
+    recipes[index] = { ...recipent }
+    setRecipes([...recipes])
   }
 
-  const loadRecipents = (params) => {
+  const loadRecipes = (params) => {
     const RECIPENTS_ALL = 'All'
     const { searchText, beforeCook } = params
 
-    const recipentsFilter = recipents
+    const recipesFilter = recipes
       .filter((x) => x.name.toLowerCase().trim().includes(searchText.toLowerCase().trim()))
       .filter((x) => beforeCook === RECIPENTS_ALL || x.beforeCook === beforeCook)
 
-    return recipentsFilter
+    return recipesFilter
   }
 
   return (
-    <RecipentsContext.Provider
+    <RecipesContext.Provider
       value={{
-        recipents,
-        setRecipents,
+        recipes,
+        setRecipes,
         searchParams,
-        viewRecipents,
         setSearchParams,
-        setViewRecipents,
-        loadRecipents,
-        updateRecipent
+        viewRecipes,
+        setViewRecipes,
+        loadRecipes,
+        updateRecipe
       }}>
       <HomePage />
-    </RecipentsContext.Provider>
+    </RecipesContext.Provider>
   )
 }
 
