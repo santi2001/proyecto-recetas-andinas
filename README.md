@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+# Requisitos para levantar el proyecto
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Node version: ^16.16.0
+Yarn version(recomendado): ^1.23.0-20200615.1913
 
-## Available Scripts
+# Pasos de instalación y de inicio
 
-In the project directory, you can run:
+## Con YARN
 
-### `npm start`
+1. yarn install -> Descarga los paquetes necesarios.
+2. yarn start -> Inicia el proyecto de forma local.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Deploy en Github Pages
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+yarn deploy -> Genera un build y es deployado en https://santi2001.github.io/proyecto-recetas-andinas/
 
-### `npm test`
+# Detalles de implementación
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Estructura de directorios en "src"
 
-### `npm run build`
+## Tener en cuenta
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Todos los directorios mencionados a continuación poseen un archivo index.js.
+Con el fin de poder facilitar la exportarción de archivos y/o componentes de React.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### directorio assets
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Contiene archivos de imagenes.
 
-### `npm run eject`
+### directorio config
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Contiene la configuración de tamaños de letras, paleta de colores, entre otras cosas para el proyecto. Requeridos por Material-UI (MUI).
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### directorio context
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Almacena la configuración del estado de la aplicación usando createContext de React.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### directorio pages
 
-## Learn More
+Almacena las paginas de la aplicación, en conjunto a sus componentes.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### directorio shared
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Almacena los componentes reutilizados por otros componentes.
 
-### Code Splitting
+### directorio utils/data
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Almacena los datos harcodeados utilizadospor la aplicación.
 
-### Analyzing the Bundle Size
+# Estructura de componente
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Por cada componente generado los siguientes archivos
 
-### Making a Progressive Web App
+.ComponentName
+|
+|_ ComponentName.jsx -> Contendra el desarrollo del componente (funciones necesarias, jsx requerido, entre otras cosas)
+|
+|_ ComponentName.style.js -> Contendra los estilos usados por el componente. Puede ser opcional
+| en caso de que el componente no requiera.
+|
+|\_ index.js -> Facilitara la exportación del componente a otros directorios y/o componentes.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+# Archivo .eslintrc.js
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Contiene la configuración eslint utilizada. Por ej el orden de importación que se debe seguir.
