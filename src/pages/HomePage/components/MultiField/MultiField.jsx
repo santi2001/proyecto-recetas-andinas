@@ -24,6 +24,7 @@ const MultiField = () => {
     setFieldList(fieldListFilter)
   }
 
+  // Permite actualizar los campos de textos
   const handleChange = (index) => (e) => {
     const fieldSelected = fieldList[index]
 

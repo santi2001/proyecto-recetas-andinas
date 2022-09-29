@@ -9,8 +9,12 @@ const RecipeDrawer = () => {
   const [openRecipeDrawer, setOpenRecipeDrawer] = useState(false)
   const classes = useStyles()
 
+  // Permite cerrar el menu lateral
+  const handleClose = () => setOpenRecipeDrawer(false)
+
+  // Boton encapsulado para reutlizar en los componentes hijos de RecipeDrawer
   const buttonClose = () => (
-    <IconButton size='medium' onClick={() => setOpenRecipeDrawer(false)}>
+    <IconButton size='medium' onClick={handleClose}>
       <CloseIcon />
     </IconButton>
   )
@@ -26,7 +30,7 @@ const RecipeDrawer = () => {
           <AddIcon />
         </Fab>
       </Tooltip>
-      <Drawer anchor='right' open={openRecipeDrawer} onClose={() => setOpenRecipeDrawer(false)}>
+      <Drawer anchor='right' open={openRecipeDrawer} onClose={handleClose}>
         <div className={classes.drawerContainer}>
           <div className={classes.drawer}>
             <RecipeForm buttonClose={buttonClose} />

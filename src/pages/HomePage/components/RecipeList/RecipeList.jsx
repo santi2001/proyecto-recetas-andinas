@@ -12,10 +12,12 @@ const RecipeList = () => {
   const { viewRecipes, updateRecipe, setViewRecipes, recipes, searchParams, loadRecipes } =
     useContext(RecipesContext)
 
+  // Mantiene actualizado el listado de recetas con los filtros y/o busqueda aplicados
   useEffect(() => {
     setViewRecipes(loadRecipes(searchParams))
   }, [recipes, searchParams])
 
+  // Maneja la actualizacion del switch 'Cocinado antes'
   const handleBeforeCookChange = (recipe) => (e) => {
     const recipeSelected = {
       ...recipe,

@@ -16,11 +16,10 @@ import useStyles from './RecipeForm.style'
 const RecipeForm = ({ buttonClose: ButtonClose }) => {
   const classes = useStyles()
 
-  const [value, setValue] = useState('female')
+  const [reviewValue, setReviewValue] = useState('')
 
-  const handleChange = (event) => {
-    setValue(event.target.value)
-  }
+  // Permite dar una reseña
+  const handleChange = (event) => setReviewValue(event.target.value)
 
   return (
     <div className={classes.container}>
@@ -52,7 +51,12 @@ const RecipeForm = ({ buttonClose: ButtonClose }) => {
         </div>
         <div className={classes.formGroup}>
           <Typography>Reseña</Typography>
-          <RadioGroup aria-label='gender' name='gender1' value={value} onChange={handleChange} row>
+          <RadioGroup
+            aria-label='review'
+            name='review'
+            value={reviewValue}
+            onChange={handleChange}
+            row>
             <FormControlLabel value='1' control={<Radio color='primary' />} label='1' />
             <FormControlLabel value='2' control={<Radio color='primary' />} label='2' />
             <FormControlLabel value='3' control={<Radio color='primary' />} label='3' />
@@ -61,12 +65,7 @@ const RecipeForm = ({ buttonClose: ButtonClose }) => {
         </div>
         <div className={classes.formGroup}>
           <Typography>Cocinado antes</Typography>
-          <StyledSwitch
-            // checked={el.beforeCock}
-            className={classes.switch}
-            // onChange={handleBeforeCookChange(index)}
-            name='beforeCock'
-          />
+          <StyledSwitch className={classes.switch} name='beforeCock' />
         </div>
         <div className={classes.actionButtonContainer}>
           <Button color='primary' variant='contained' className={classes.createButton}>

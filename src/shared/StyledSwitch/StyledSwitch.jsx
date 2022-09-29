@@ -1,6 +1,7 @@
 import React from 'react'
 import { Switch, withStyles } from '@material-ui/core'
 
+// Switch Estilizado
 const StyledSwitch = withStyles((theme) => ({
   root: {
     width: 48,

@@ -53,6 +53,6 @@ module.exports = {
     'multiline-ternary': 'off',
     'simple-import-sort/imports': 'error',
     'import/newline-after-import': ['error', { count: 1 }],
-    'react/prop-types': 0 // disabled until we get typescript working
+    'react/prop-types': 0
   }
 }

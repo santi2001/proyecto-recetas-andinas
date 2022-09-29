@@ -9,19 +9,25 @@ import { RecipesContext } from 'context'
 import useStyles from './SearchWidget.style'
 
 const SearchWidget = () => {
+  // Para evitar problemas con valores magicos
+  const ACTIVE_STATE = true
+  const INACTIVE_STATE = false
+  const DEFAULT_STATE = 'All'
+
   const classes = useStyles()
+
   const { searchParams, setSearchParams } = useContext(RecipesContext)
-
-  const showValue = (value) => {
-    if (value === true) return 'Activos'
-
-    if (value === false) return 'Inactivos'
-
-    return 'Todos'
-  }
-
   const { searchText, beforeCook } = searchParams
 
+  const showValue = (value) => {
+    if (value === DEFAULT_STATE) return 'Todos'
+
+    if (value === ACTIVE_STATE) return 'Activos'
+
+    if (value === INACTIVE_STATE) return 'Inactivos'
+  }
+
+  // Actualiza los parametros de busqueda o filtros
   const handleChangeParams = (e) =>
     setSearchParams((state) => ({ ...state, [e.target.name]: e.target.value }))
 
@@ -61,17 +67,17 @@ const SearchWidget = () => {
             </Typography>
           )}
           IconComponent={(props) => <KeyboardArrowDownIcon color='primary' {...props} />}>
-          <MenuItem value='All' className={classes.menuItem}>
+          <MenuItem value={DEFAULT_STATE} className={classes.menuItem}>
             <Typography>Todos</Typography>
-            <Radio checked={beforeCook === 'All'} className={classes.radio} />
+            <Radio checked={beforeCook === DEFAULT_STATE} className={classes.radio} />
           </MenuItem>
-          <MenuItem value={true} className={classes.menuItem}>
+          <MenuItem value={ACTIVE_STATE} className={classes.menuItem}>
             <Typography>Activos</Typography>
-            <Radio checked={beforeCook === true} className={classes.radio} />
+            <Radio checked={beforeCook === ACTIVE_STATE} className={classes.radio} />
           </MenuItem>
-          <MenuItem value={false} className={classes.menuItem}>
+          <MenuItem value={INACTIVE_STATE} className={classes.menuItem}>
             <Typography>Inactivos</Typography>
-            <Radio checked={beforeCook === false} className={classes.radio} />
+            <Radio checked={beforeCook === INACTIVE_STATE} className={classes.radio} />
           </MenuItem>
         </Select>
       </div>
